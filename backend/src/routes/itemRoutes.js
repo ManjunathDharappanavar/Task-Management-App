@@ -5,11 +5,11 @@ const {
   getItems,
   updateItem,
   deleteItem
-} = require("../controllers/inventoryController");
+} = require("../controllers/itemController");
 
 router.post("/", addItem);
-router.get("/", getItems);
-router.put("/:id", updateItem);
+router.get("/", getItems);        
+router.put("/:id", updateItem);   
 router.delete("/:id", deleteItem);
 
 module.exports = router;
