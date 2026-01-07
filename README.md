@@ -305,7 +305,7 @@ PORT=5000
 NODE_ENV=development
 
 # Database
-MONGO_URI=mongodb://localhost:27017/taskmanagement
+MONGO_URI=mongodb:
 # OR for MongoDB Atlas:
 # MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/dbname
 
@@ -465,3 +465,4 @@ curl -X POST http://localhost:5000/api/items \
 
 <blockquote>
   <p><em>📝 Note: Screenshots will be updated as features are developed
+
