@@ -1,42 +1,223 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Background */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+}
+
+/* Center App */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Card */
+.task-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Title */
+.task-container h2 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Input Section */
+.task-container input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.task-container input:focus {
+  border-color: #667eea;
+}
+
+/* Add Button */
+.task-container button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-container button:hover {
+  background: #5563d6;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+/* Task Item */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f7ff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Task Text */
+li span {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  word-break: break-word;
+}
+
+/* Action Buttons */
+li div {
+  display: flex;
+  gap: 6px;
+}
+
+li button {
+  width: auto;
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+/* Additional layout for form and tasks */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-row textarea {
+  min-height: 60px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.form-actions button {
+  flex: 1;
+}
+
+.form-actions .cancel {
+  background: #95a5a6;
+}
+
+.task-list {
+  margin-top: 12px;
+}
+
+.task-list li {
+  display: block;
+  background: #f5f7ff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.task-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-btn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+}
+
+.task-actions button {
+  margin-left: 6px;
+}
+
+.task-details {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #e0e0e0;
+  font-size: 13px;
+  color: #333;
+}
+
+.completed .title-btn {
+  text-decoration: line-through;
+  color: #7f8c8d;
+}
+
+/* Edit Button */
+.edit {
+  background: #f39c12;
+}
+
+.edit:hover {
+  background: #e08e0b;
+}
+
+/* Delete Button */
+.delete {
+  background: #e74c3c;
+}
+
+.delete:hover {
+  background: #cf3e30;
+}
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 480px) {
+  .task-container {
+    padding: 18px;
   }
-  to {
-    transform: rotate(360deg);
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  li div {
+    width: 100%;
+    justify-content: flex-end;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
